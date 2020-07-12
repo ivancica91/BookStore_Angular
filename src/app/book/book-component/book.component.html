@@ -1,0 +1,13 @@
+
+<mat-card [routerLink] = "['/book', book.id]">
+  <img [src]="book.imageSrc"/>
+  <div class = "bookDataContainer">
+  <h1>{{book.title}}</h1>
+  <p>{{book.author | uppercase}}</p>
+  <p>{{book.price | currency : '€ '}}</p>
+  <p>{{book.description}}</p>
+  <p>{{book.condition}}</p>
+  </div>
+  <div class = "overlay"></div>
+</mat-card>
+

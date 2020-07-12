@@ -1,0 +1,37 @@
+nav{
+  background-image: url(https://image.freepik.com/free-photo/wooden-table_36051-46.jpg);
+  color: whitesmoke;
+  height: 60px;
+  h2{
+    margin: 0;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    cursor: pointer
+
+  }
+  ul{
+    margin: 0;
+    float: right;
+  }
+  li{
+    display:inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    a{
+      cursor: pointer;
+      font-weight: 500;
+
+    }
+
+  }
+}
+  #contentContainer{
+    padding-top: 30px;
+  }
+
+
+
+

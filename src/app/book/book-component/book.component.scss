@@ -1,0 +1,35 @@
+.redTitle{
+  color: red;
+}
+
+mat-card{
+  padding: 20px;
+  margin: 5px;
+  position: relative;
+  text-align: center;
+ img{
+ padding-left: 40px;
+ padding-right: 40px;
+ }
+
+ .bookDataContainer{
+  width: 100%;
+  padding: 10px; //razmak izmedu slike i podataka
+  }
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 0;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+}
+
+mat-card :hover.overlay{
+  opacity: 0.3;
+}

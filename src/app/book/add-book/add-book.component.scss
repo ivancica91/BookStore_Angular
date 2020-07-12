@@ -1,0 +1,25 @@
+mat-card{
+  overflow: auto;
+  h2{
+    text-align: center;
+  }
+}
+form{
+  width: 400px;
+  margin: 0 auto;
+  mat-form-field{
+    width: 100%;
+  }
+
+  span {
+    font-size: 13px;
+    color: rgb(199, 6, 6);
+  }
+  .buttonContainer{
+    button{
+    float: right;
+  }
+}
+}
+
+
