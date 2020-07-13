@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/Book';
 import { BookService } from 'src/app/book.service';
 
@@ -9,7 +9,7 @@ import { BookService } from 'src/app/book.service';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
-
+  private router: Router
   book: Book;
 
   constructor(private bookService: BookService,
@@ -18,5 +18,6 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.book = this.bookService.GetBook(+this.activatedRoute.snapshot.paramMap.get('id'));
   }
+
 
 }

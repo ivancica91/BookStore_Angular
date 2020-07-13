@@ -3,7 +3,7 @@
     <h2 [routerLink] = "['home']"> Book Antique Store </h2>
     <ul>
 <li [routerLink]= "['book','add']"><a>Add new book</a></li>
-  <li *ngIf = "!user" [routerLink]="['login']"><a>Login</a></li>
+  <li *ngIf = "!user" [routerLink]="['login']"><a>Login <i class="far fa-user"></i></a></li>
   <li *ngIf = "user" (click)= "Logout()"><a>Logout: {{user.username}}</a></li>
 </ul>
 </div>
