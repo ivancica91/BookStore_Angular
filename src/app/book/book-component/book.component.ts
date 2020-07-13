@@ -12,6 +12,7 @@ import { Book } from 'src/app/Book';
 export class BookComponent{
  @Input() book: Book;
  @Output() clickbook: EventEmitter<string> = new EventEmitter();
+ show: boolean = false;
 
 }
 

@@ -3,18 +3,22 @@
 }
 
 mat-card{
+  background-color: whitesmoke;
   padding: 20px;
   margin: 5px;
   position: relative;
   text-align: center;
+  height: 700px;
  img{
- padding-left: 40px;
- padding-right: 40px;
+width: 100%;
+ padding-left: 2px;
+ padding-right: 2px;
  }
 
  .bookDataContainer{
   width: 100%;
   padding: 10px; //razmak izmedu slike i podataka
+  color: black;
   }
 
   .overlay{

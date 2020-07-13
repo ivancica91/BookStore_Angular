@@ -5,7 +5,9 @@
   <h1>{{book.title}}</h1>
   <p>{{book.author | uppercase}}</p>
   <p>{{book.price | currency : '€ '}}</p>
+  <div *ngIf="show">
   <p>{{book.description}}</p>
+  </div>
   <p>{{book.condition}}</p>
   </div>
   <div class = "overlay"></div>
