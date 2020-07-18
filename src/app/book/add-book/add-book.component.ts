@@ -43,8 +43,9 @@ export class AddBookComponent implements OnInit {
     condition:  this.bookForm.controls.Condition.value,
     imageSrc:  this.bookForm.controls.ImageUrl.value
     };
-    this.bookService.AddBook(book);
+    this.bookService.AddBook(book).subscribe();
     this.router.navigate(['/home']);
+    //kad doda novu knjigu, moram refreshat stranicu da se vidi, zasto?!
   };
 
 

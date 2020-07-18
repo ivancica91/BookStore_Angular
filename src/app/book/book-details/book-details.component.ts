@@ -27,8 +27,11 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
-//Delete(){
-  //return this.bookService.DeleteBook(0).subscribe
-//}
+DeleteBook(id){
+console.log("deleting" + id);
+this.bookService.DeleteBook(id).subscribe()
+  this.router.navigate(['/home']);
+
+}
 
 }

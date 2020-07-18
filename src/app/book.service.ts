@@ -15,21 +15,21 @@ export class BookService {
 
 
  GetBooks(): Observable <Book[]> {
-  return this.http.get<Book[]>('https://localhost:44384/api/Books');
+  return this.http.get<Book[]>('http://localhost:44384/api/Books');
  }
 
  GetBook(id: number): Observable <Book>{
-  return this.http.get<Book>('https://localhost:44384/api/Books/' + id);
+  return this.http.get<Book>('http://localhost:44384/api/Books/' + id);
  }
  //tu negdje dodati i za DeleteBook? i UpdateBook
 
- AddBook(book: Book){
-  this.http.post('https://localhost:44384/api/Books', book);
+ AddBook(book: Book): Observable<Book>{
+  return this.http.post<Book>('http://localhost:44384/api/Books', book);
  }
 
- //DeleteBook(id: number): Observable <Book>{
-  // return this.http.delete<Book>('https://localhost:44384/api/Books/' + id);
+ DeleteBook(id: number): Observable <any>{
+   return this.http.delete<Book>('http://localhost:44384/api/Books/' + id);
 
-//}
+}
 }
 

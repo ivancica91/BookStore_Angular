@@ -7,7 +7,7 @@
   <p>{{book.price | currency : '€ '}}</p>
   <p>{{book.description}}</p>
   <p>{{book.condition}}</p>
-  <button mat-flat-button color="primary" ><i class="fas fa-trash"></i></button>
+  <button mat-flat-button color="primary" [routerLink]="['/home']" (click)="DeleteBook(book.id)">Delete book</button>
   </div>
   <div class = "overlay"></div>
 </mat-card>
