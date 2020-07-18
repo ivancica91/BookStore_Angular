@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import { BookModule } from './book/book.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -25,6 +27,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatInputModule,
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     BookModule,
     RouterModule.forRoot([{

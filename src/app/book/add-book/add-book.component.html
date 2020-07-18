@@ -35,7 +35,7 @@
       <input placeholder="Image Url" matInput formControlName="ImageUrl"/>
     </mat-form-field>
     <div class = "buttonContainer">
-    <button mat-flat-button color = "primary" [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
+    <button mat-flat-button type="button" color = "primary" [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
     <button mat-flat-button (click)="Cancel()">Cancel</button>
   </div>
   </form>
