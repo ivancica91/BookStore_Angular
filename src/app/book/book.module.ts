@@ -11,18 +11,25 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
 declarations:[
   AddBookComponent,
+  EditBookComponent,
   BookDetailsComponent,
   BookComponent,
-  BookListComponent],
+  BookListComponent
+  ],
 imports: [
   CommonModule,
   MatAutocompleteModule,
   RouterModule.forChild([{
     path: 'home', component: BookListComponent
+    },{
+      path: 'book/:id/edit', component: EditBookComponent
     }, {
       path: 'book/add', component: AddBookComponent
     }, {
@@ -33,6 +40,7 @@ imports: [
   MatButtonModule,
   MatCardModule,
   MatInputModule,
+  MatSelectModule
   ]
 })
 export class BookModule {

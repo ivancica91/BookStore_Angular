@@ -1,4 +1,4 @@
-import { MatAutocomplete } from '@angular/material/autocomplete';
+
 
 export class Book {
   id?: number;
@@ -6,7 +6,7 @@ export class Book {
   author: string;
   price: number;
   description: string;
-  condition:string ;
+  condition:string;
   imageSrc: string;
 
 

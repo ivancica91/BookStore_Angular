@@ -29,7 +29,8 @@ export class BookDetailsComponent implements OnInit {
 
 DeleteBook(id){
 console.log("deleting" + id);
-this.bookService.DeleteBook(id).subscribe()
+this.bookService.DeleteBook(id).subscribe( (msg) => console.log(msg),
+(error) => console.log(error)) //nece obrisati dok se ne refresha stranica!
   this.router.navigate(['/home']);
 
 }
