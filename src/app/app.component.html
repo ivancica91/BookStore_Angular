@@ -2,13 +2,15 @@
   <div class = "col-8 offset-2">
     <h2 [routerLink] = "['home']"> Book Store </h2>
     <ul>
+      <ul class="searchContainer">
+        <app-book-search></app-book-search>
+      </ul>
 <li [routerLink]= "['book','add']"><a>Add new book</a></li>
   <li *ngIf = "!user" [routerLink]="['login']"><a>Login <i class="far fa-user"></i></a></li>
   <li *ngIf = "user" (click)= "Logout()"><a>Logout: {{user.username}}</a></li>
 </ul>
 </div>
 </nav>
-
 <div class="container" id = "contentContainer">
   <router-outlet></router-outlet>
 </div>

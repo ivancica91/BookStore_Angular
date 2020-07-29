@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BookModule } from './book/book.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BookSearchComponent } from './book/book-search/book-search.component';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     NotFoundComponent,
+    BookSearchComponent,
   ],
   imports: [
     MatCardModule,
