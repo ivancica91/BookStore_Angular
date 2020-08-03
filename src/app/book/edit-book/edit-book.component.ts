@@ -11,8 +11,8 @@ import { Book } from 'src/app/Book';
 })
 export class EditBookComponent implements OnInit {
   bookForm: FormGroup;
-  myControl = new FormControl
-  options: string[] = ['new', 'as new', 'good', 'bad'];
+ // myControl = new FormControl
+ // options: string[] = ['new', 'as new', 'good', 'bad'];
   show: boolean = false;
   book: Book;
 
@@ -35,7 +35,7 @@ export class EditBookComponent implements OnInit {
   author: new FormControl(),
   price: new FormControl(),
   description: new FormControl(),
-  condition: new FormControl(),
+  condition: new FormControl([''].toString),
   imageSrc: new FormControl(),
   });
 }

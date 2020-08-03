@@ -6,7 +6,7 @@ nav{
     margin: 0;
     display: inline-block;
     padding-top: 20px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
     cursor: pointer
 
   }
@@ -16,10 +16,11 @@ nav{
   }
   li{
     display:inline-block;
+    margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     a{
       cursor: pointer;
       font-weight: 500;
@@ -30,9 +31,13 @@ nav{
 }
   #contentContainer{
     padding-top: 30px;
+
   }
 
-
+.wrapper{
+  position: relative;
+  bottom: 100px;
+}
 
 
 

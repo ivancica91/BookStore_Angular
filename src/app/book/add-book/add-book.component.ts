@@ -1,3 +1,4 @@
+import { MatSelectModule } from '@angular/material/select';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 
 import { Observable } from 'rxjs';
@@ -14,8 +15,8 @@ import { Book } from 'src/app/Book';
 })
 export class AddBookComponent implements OnInit {
   bookForm:FormGroup;
-  myControl = new FormControl
-  options: string[] = ['new', 'as new', 'good', 'bad'];
+  //myControl = new FormControl
+ /// options: string[] = ['new', 'as new', 'good', 'bad'];
   show: boolean = false;
 
   constructor(private formbuilder:FormBuilder,
@@ -26,7 +27,7 @@ export class AddBookComponent implements OnInit {
       Author: new FormControl(''),
       Price: new FormControl(''),
       Description: new FormControl(''),
-      Condition: new FormControl(''),
+      Condition: new FormControl([''].toString),
       ImageUrl: new FormControl(''),
         });
 

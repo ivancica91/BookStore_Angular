@@ -1,14 +1,11 @@
-.redTitle{
-  color: red;
-}
 
 mat-card{
   background-color: whitesmoke;
-  padding: 20px;
   margin: 5px;
   position: relative;
   text-align: center;
-  height: 680px;
+  height: 715px;
+
  img{
 width: 100%;
  padding-left: 2px;
@@ -16,7 +13,6 @@ width: 100%;
  }
 
  .bookDataContainer{
-  width: 100%;
   padding: 10px; //razmak izmedu slike i podataka
   color: black;
   }
@@ -37,3 +33,5 @@ width: 100%;
 mat-card :hover.overlay{
   opacity: 0.3;
 }
+
+

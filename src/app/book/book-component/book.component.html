@@ -8,7 +8,7 @@
   <div *ngIf="show">
   <p>{{book.description}}</p>
   </div>
-  <p>{{book.condition}}</p>
+  <p [ngStyle]="{'color':'red'}">{{book.condition}}</p>
   </div>
   <div class = "overlay"></div>
 </mat-card>

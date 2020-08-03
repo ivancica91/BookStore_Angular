@@ -6,7 +6,7 @@ export class Book {
   author: string;
   price: number;
   description: string;
-  condition:string;
+  condition: string;
   imageSrc: string;
 
 

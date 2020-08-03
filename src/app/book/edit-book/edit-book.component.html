@@ -1,23 +1,23 @@
 <mat-card class = "col-8 offset-2">
   <h2>Edit book</h2>
-<form [formGroup]="bookForm">
-  <mat-form-field *ngIf="show">
-    <input placeholder="Id" matInput formControlName="id"/>
-  </mat-form-field>
-  <mat-form-field>
-    <input placeholder="Title *" matInput formControlName="title"/>
-  </mat-form-field>
-  <mat-form-field>
-    <input placeholder="Author" matInput formControlName="author"/>
-  </mat-form-field>
-  <mat-form-field>
-    <input placeholder="Price" matInput type="number" formControlName="price"/>
-  </mat-form-field>
-  <mat-form-field>
-    <textarea input placeholder="Description" matInput formControlName="description"></textarea>
-  </mat-form-field>
-  <mat-form-field class="Condition" appearance="fill">
-    <mat-label>Condition*</mat-label>
+  <form [formGroup]= "bookForm">
+    <mat-form-field *ngIf="show">
+      <input placeholder="Id" matInput formControlName="id"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Title *" matInput formControlName="title"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Author" matInput formControlName="author"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Price" matInput type="number" formControlName="price"/>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea placeholder="Description" matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+   <!-- <mat-label>Condition</mat-label>
     <mat-select [formControl]="myControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let option of options" [value]="option">
@@ -25,11 +25,18 @@
       </mat-option>
     </mat-select>
     <mat-error *ngIf="myControl.hasError('required')">Please choose a condition</mat-error>
-    <mat-hint>{{myControl.value?.sound}}</mat-hint>
+    <mat-hint>{{myControl.value?.sound}}</mat-hint> -->
+    <mat-label>Condition</mat-label>
+      <select matNativeControl required formControlName="condition">
+        <option value="new">New</option>
+        <option value="as new">As new</option>
+        <option value="good">Good</option>
+        <option value="bad">Bad</option>
+      </select>
   </mat-form-field>
-  <mat-form-field>
-    <input placeholder="Image Url" matInput formControlName="imageSrc"/>
-  </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Image Url" matInput formControlName="imageSrc"/>
+    </mat-form-field>
   <button mat-flat-button color="primary" (click)="SaveChanges()">Save changes</button>
 </form>
 </mat-card>
