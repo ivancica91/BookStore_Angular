@@ -1,5 +1,19 @@
+
+<mat-card>
+
+<div>
+  <input type="text" placeholder="Search author" (keyup)="onChangeEvent($event)">
+</div>
+
+<div>
+  <p *ngFor= "let author of authors">{{author.firstName}} {{author.lastName}}</p>
+</div>
+
+</mat-card>
+
 <mat-card class = "col-8 offset-2">
   <h2>Add new book</h2>
+  <div class="formF">
   <form [formGroup]= "bookForm">
     <mat-form-field *ngIf="show">
       <input placeholder="Id" matInput formControlName="Id"/>
@@ -10,8 +24,17 @@
     <span *ngIf = "bookForm.get('Title').touched && bookForm.get('Title').errors">
       Please enter a valid title!
     </span>
-    <mat-form-field>
+    <!-- <mat-form-field>
       <input placeholder="Author" matInput formControlName="Author"/>
+    </mat-form-field> -->
+    <!-- <mat-form-field>
+      <input placeholder="FirstName" matInput  formControlName="FirstName"/>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="LastName" matInput  formControlName="LastName"/>
+    </mat-form-field> -->
+    <mat-form-field>
+      <input placeholder="AuthorId" matInput type="number" formControlName="AuthorId"/>
     </mat-form-field>
     <mat-form-field>
       <input placeholder="Price" matInput type="number" formControlName="Price"/>
@@ -40,9 +63,12 @@
     <mat-form-field>
       <input placeholder="Image Url" matInput formControlName="ImageUrl"/>
     </mat-form-field>
+
     <div class = "buttonContainer">
       <button mat-flat-button type="button" color = "primary" [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
       <button mat-flat-button (click)="Cancel()">Cancel</button>
     </div>
   </form>
+</div>
 </mat-card>
+

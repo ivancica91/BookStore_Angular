@@ -1,10 +1,12 @@
+<!-- navigation bar ---------------------------------------------->
 <nav>
-  <div class = "col-8 offset-2">
-    <h2 [routerLink] = "['home']"> Book Store </h2>
-    <ul>
-      <ul class="searchContainer">
-        <app-book-search></app-book-search>
-      </ul>
+<div class = "col-8 offset-2">
+  <!-- main-title -->
+  <h1 [routerLink] = "['home']" class="main-title" > Book Store </h1>
+  <ul>
+  <ul class="searchContainer" id="search">
+  <app-book-search></app-book-search>
+  </ul>
 
 <li [routerLink]= "['book','add']"><a>Add new book</a></li>
   <li *ngIf = "!user" [routerLink]="['login']"><a>Login <i class="far fa-user"></i></a></li>
@@ -16,6 +18,7 @@
 <div class="container" id = "contentContainer">
   <router-outlet></router-outlet>
 </div>
+
 
 
 

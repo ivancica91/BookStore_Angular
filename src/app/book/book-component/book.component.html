@@ -3,7 +3,7 @@
   <img [src]="book.imageSrc"/>
   <div class = "bookDataContainer">
   <h1>{{book.title}}</h1>
-  <p>{{book.author | uppercase}}</p>
+  <p>{{book.author.fullName}} </p> <!-- | uppercase -->
   <p>{{book.price | currency : '€ '}}</p>
   <div *ngIf="show">
   <p>{{book.description}}</p>

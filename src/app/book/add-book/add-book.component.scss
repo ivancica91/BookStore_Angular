@@ -1,14 +1,25 @@
+
 mat-card{
   overflow: auto;
+  color: white;
   h2{
+    color: white;
     text-align: center;
+
   }
+
 }
+
+
+
 form{
   width: 400px;
   margin: 0 auto;
+
   mat-form-field{
-    width: 100%;
+  width: 100%;
+
+
   }
 
   span {

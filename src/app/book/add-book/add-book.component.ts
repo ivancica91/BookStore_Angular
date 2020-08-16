@@ -1,3 +1,4 @@
+import { Author } from './../../Author';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 
@@ -8,6 +9,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Book } from 'src/app/Book';
 
+
+
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
@@ -15,20 +18,25 @@ import { Book } from 'src/app/Book';
 })
 export class AddBookComponent implements OnInit {
   bookForm:FormGroup;
-  //myControl = new FormControl
- /// options: string[] = ['new', 'as new', 'good', 'bad'];
   show: boolean = false;
+  authors: Author[] = [];
 
-  constructor(private formbuilder:FormBuilder,
+  constructor(
+    private formbuilder:FormBuilder,
     private router: Router,
-    private bookService: BookService) {
+    private bookService: BookService, ) {
+
       this.bookForm = new FormGroup({
       Title: new FormControl(''),
-      Author: new FormControl(''),
+      AuthorId: new FormControl(''),
+      // Author: new FormControl(''),
+      // FirstName: new FormControl(''),
+      // LastName: new FormControl(''),
       Price: new FormControl(''),
       Description: new FormControl(''),
       Condition: new FormControl([''].toString),
       ImageUrl: new FormControl(''),
+
         });
 
 
@@ -38,19 +46,33 @@ export class AddBookComponent implements OnInit {
 
   }
 
+  onChangeEvent(event: any): void {
+
+    this.bookService.searchAuthorByFirstname(event.target.value).subscribe(s => {
+      console.log(s)
+
+    this.authors = s;
+  } );
+  }
+
+
+
   Save() {
     const book: Book = {
-
-      title: this.bookForm.controls.Title.value,
       author: this.bookForm.controls.Author.value,
+      // firstName: this.bookForm.controls.FirstName.value,
+      // lastName: this.bookForm.controls.LastName.value,
+      authorId: this.bookForm.controls.AuthorId.value,
+      title: this.bookForm.controls.Title.value,
+      // author: this.bookForm.controls.Author.value,
       price:  this.bookForm.controls.Price.value,
       description:  this.bookForm.controls.Description.value,
       condition:  this.bookForm.controls.Condition.value,
       imageSrc:  this.bookForm.controls.ImageUrl.value
       };
-      this.bookService.AddBook(book).subscribe();
-      this.router.navigate(['/home']);
-      //kad doda novu knjigu, moram refreshat stranicu da se vidi, zasto?!
+      this.bookService.AddBook(book).subscribe( options => this.router.navigate(['/home']));
+
+
     };
 
 

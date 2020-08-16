@@ -1,13 +1,26 @@
+
+/* navigation bar*/
 nav{
-  background-image: url(https://image.freepik.com/free-photo/wooden-table_36051-46.jpg);
-  color: whitesmoke;
-  height: 80px;
-  h2{
-    margin: 0;
+  // background-image: url(https://image.freepik.com/free-photo/wooden-table_36051-46.jpg);
+  background-color: whitesmoke;
+   color: black;
+   height: 80px;
+   font-size: 1rem;
+
+ }
+@font-face { font-family: PermanentMarker; src: url(../assets/font/PermanentMarker.ttf);}
+/* Main title */
+    .main-title{
+      position: absolute;
+    font-family: PermanentMarker, sans-serif;
+    font-size: 2rem;
+    margin-top: 10px;
     display: inline-block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline-style: none;
     cursor: pointer
+
 
   }
   ul{
@@ -17,10 +30,12 @@ nav{
   li{
     display:inline-block;
     margin-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+margin-left: 20px;
+margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    outline-style: none;
+
     a{
       cursor: pointer;
       font-weight: 500;
@@ -28,16 +43,17 @@ nav{
     }
 
   }
-}
+
   #contentContainer{
     padding-top: 30px;
 
   }
 
-.wrapper{
-  position: relative;
-  bottom: 100px;
-}
+
+
+
+
+
 
 
 

@@ -10,6 +10,7 @@ import { User } from './user';
 export class AppComponent implements OnInit {
   user: User;
 
+
   constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {

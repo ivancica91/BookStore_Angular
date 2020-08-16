@@ -1,10 +1,11 @@
 
 mat-card{
-  background-color: whitesmoke;
+  background-color: white;
   margin: 5px;
   position: relative;
   text-align: center;
   height: 715px;
+  outline-style: none;
 
  img{
 width: 100%;
@@ -23,7 +24,7 @@ width: 100%;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: #fff;
+    background-color: white;
     opacity: 0;
     transition: 0.3s ease;
     cursor: pointer;

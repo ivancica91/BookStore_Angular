@@ -3,6 +3,9 @@ mat-card{
   margin: 5px;
   position: relative;
   text-align: center;
+  background-color: whitesmoke;
+  outline-style: none;
+
  img{
    position: center;
 
@@ -12,12 +15,15 @@ mat-card{
  .bookDataContainer{
   width: 100%;
   padding: 10px; //razmak izmedu slike i podataka
+  color: black;
   }
 
   .buttonContainer{
-    color:whitesmoke;
-    background-color: gray;
+    color:black;
+background-color: whitesmoke;
     position: absolute; left: 0px;
+    font-size: 2rem;
+    outline-style: none;
   }
 
 .btnUpdate{ // ne mogu dobiti horizontalni razmak izmedu buttonsa pa sam stavio vertikalni

@@ -1,3 +1,4 @@
+import { Author } from './Author';
 import { MatAutocomplete } from '@angular/material/autocomplete';
 import { Book } from './Book';
 import { Injectable } from '@angular/core';
@@ -6,7 +7,9 @@ import { Observable, of} from 'rxjs';
 import { tap, catchError } from 'rxjs/operators'
 import { title } from 'process';
 
+
 const baseUrl = 'http://localhost:44384/api/Books/';
+const authorUrl = 'http://localhost:44384/api/Authors/'
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +48,6 @@ private handleError<T>(operation = 'operation', result?: T) {
  GetBook(id: number): Observable <Book>{
   return this.http.get<Book>(baseUrl + id);
  }
- //tu negdje dodati i za DeleteBook? i UpdateBook
 
  AddBook(book: Book): Observable<Book>{
   return this.http.post<Book>(baseUrl, book);
@@ -59,19 +61,32 @@ return this.http.put(baseUrl + book.id, book);
    return this.http.delete<Book>(baseUrl + id);
  }
 
+ // Move to different service
+ searchAuthorByFirstname(firstName: string) : Observable<Author[]> {
+   return this.http.get<Author[]>(`http://localhost:44384/api/Authors/FindAuthor?FirstName=${firstName}&Page=1&Limit=10`)
+ }
+
  searchBooks(title: string): Observable<Book[]> {
    if (!title.trim()) {
      //ako nije search term, vrati prazan array
      return of([]);
    }
-   return this.http.get<Book[]>(`${baseUrl + 'findbooks?bookTitle=' + title}`).pipe( //pogledaj ovo jos, nesto tu ne valja, backend je dobar sad!
+   return this.http.get<Book[]>(`${baseUrl + 'FindBooksWithTitle?bookTitle=' + title}`).pipe(
     tap(x => x.length ?
       console.log(`found books matching "${title}"`) :
       console.log(`no books matching "${title}"`)),
       catchError(this.handleError<Book[]>('searchBooks', []))
-      //prepravi ovo po skillshareu
+
    );
  }
+
+//  GetAuthors(): Observable <Author[]> {
+//   return this.http.get<Author[]>(authorUrl);
+//  }
+
+//  GetAuthor(id: number): Observable <Author> {
+//    return this.http.get<Author> (authorUrl + id)
+//  }
 
 
 }
