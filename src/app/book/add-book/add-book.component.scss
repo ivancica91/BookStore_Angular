@@ -1,12 +1,30 @@
+.search-result li {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  list-style-type: none;
+}
+.search-result li:hover {
+  background-color: whitesmoke;
+  height: auto;
+}
 
 mat-card{
+  background-color: white;
   overflow: auto;
-  color: white;
+  color: black ;
   h2{
-    color: white;
+    color: black;
     text-align: center;
 
   }
+
+
 
 }
 
@@ -18,8 +36,6 @@ form{
 
   mat-form-field{
   width: 100%;
-
-
   }
 
   span {
@@ -31,6 +47,10 @@ form{
     float: right;
   }
 }
+}
+
+::placeholder{
+  color: black !important;
 }
 
 

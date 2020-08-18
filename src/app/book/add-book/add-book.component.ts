@@ -1,3 +1,4 @@
+import { AuthorService } from './../../author.service';
 import { Author } from './../../Author';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocomplete } from '@angular/material/autocomplete';
@@ -24,12 +25,13 @@ export class AddBookComponent implements OnInit {
   constructor(
     private formbuilder:FormBuilder,
     private router: Router,
-    private bookService: BookService, ) {
+    private bookService: BookService,
+    private authorService: AuthorService, ) {
 
       this.bookForm = new FormGroup({
       Title: new FormControl(''),
-      AuthorId: new FormControl(''),
-      // Author: new FormControl(''),
+      // AuthorId: new FormControl(''),
+      Author: new FormControl(''), // sta da ovdje stavim da mogu hvatat searchbyauthor?
       // FirstName: new FormControl(''),
       // LastName: new FormControl(''),
       Price: new FormControl(''),
@@ -48,11 +50,12 @@ export class AddBookComponent implements OnInit {
 
   onChangeEvent(event: any): void {
 
-    this.bookService.searchAuthorByFirstname(event.target.value).subscribe(s => {
+    this.authorService.searchAuthorByFirstname(event.target.value).subscribe(s => {
       console.log(s)
 
     this.authors = s;
-  } );
+
+  });
   }
 
 
@@ -62,9 +65,8 @@ export class AddBookComponent implements OnInit {
       author: this.bookForm.controls.Author.value,
       // firstName: this.bookForm.controls.FirstName.value,
       // lastName: this.bookForm.controls.LastName.value,
-      authorId: this.bookForm.controls.AuthorId.value,
+      // authorId: this.bookForm.controls.AuthorId.value,
       title: this.bookForm.controls.Title.value,
-      // author: this.bookForm.controls.Author.value,
       price:  this.bookForm.controls.Price.value,
       description:  this.bookForm.controls.Description.value,
       condition:  this.bookForm.controls.Condition.value,

@@ -25,7 +25,10 @@ export class EditBookComponent implements OnInit {
     this.activatedRoute.params.subscribe(params =>{
       this.service.GetBook(params['id'])
       .subscribe(Book=>{
-        this.bookForm.setValue({...Book}); //ovaj red uzima postojece vrijednosti i upisuje ih u formu koju mozemo onda promijeniti
+        this.bookForm.patchValue({...Book}); //ovaj red uzima postojece vrijednosti i upisuje ih u formu koju mozemo onda promijeniti..
+        //umjesto setValue stavio patchValue da mogu promijeniti samo neke vrijednosti, tj da mi ne trazi sve..
+        // (Use the setValue() method to set a new value for an individual control. The setValue() method strictly adheres to the structure of the form group and replaces the entire value for the control.)
+        //Use the patchValue() method to replace any properties defined in the object that have changed in the form model.
       })
   });
 
@@ -33,6 +36,7 @@ export class EditBookComponent implements OnInit {
   id: new FormControl(),
   title: new FormControl(),
   author: new FormControl(),
+  // authorId: new FormControl(),
   price: new FormControl(),
   description: new FormControl(),
   condition: new FormControl([''].toString),

@@ -9,7 +9,7 @@ import { title } from 'process';
 
 
 const baseUrl = 'http://localhost:44384/api/Books/';
-const authorUrl = 'http://localhost:44384/api/Authors/'
+
 
 @Injectable({
   providedIn: 'root'
@@ -54,16 +54,11 @@ private handleError<T>(operation = 'operation', result?: T) {
  }
 
  UpdateBook(book: Book): Observable <any> {
-return this.http.put(baseUrl + book.id, book);
-}
+ return this.http.put(baseUrl + book.id, book);
+ }
 
  DeleteBook(id: number): Observable <any>{
    return this.http.delete<Book>(baseUrl + id);
- }
-
- // Move to different service
- searchAuthorByFirstname(firstName: string) : Observable<Author[]> {
-   return this.http.get<Author[]>(`http://localhost:44384/api/Authors/FindAuthor?FirstName=${firstName}&Page=1&Limit=10`)
  }
 
  searchBooks(title: string): Observable<Book[]> {

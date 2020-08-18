@@ -1,5 +1,5 @@
 
-<mat-card>
+<!-- <mat-card>
 
 <div>
   <input type="text" placeholder="Search author" (keyup)="onChangeEvent($event)">
@@ -9,15 +9,15 @@
   <p *ngFor= "let author of authors">{{author.firstName}} {{author.lastName}}</p>
 </div>
 
-</mat-card>
+</mat-card> -->
 
 <mat-card class = "col-8 offset-2">
   <h2>Add new book</h2>
-  <div class="formF">
+  <!-- <div class="formF"> -->
   <form [formGroup]= "bookForm">
     <mat-form-field *ngIf="show">
       <input placeholder="Id" matInput formControlName="Id"/>
-    </mat-form-field>
+    </mat-form-field >
     <mat-form-field>
       <input placeholder="Title *" matInput formControlName="Title"/>
     </mat-form-field>
@@ -33,9 +33,15 @@
     <mat-form-field>
       <input placeholder="LastName" matInput  formControlName="LastName"/>
     </mat-form-field> -->
-    <mat-form-field>
+   <mat-form-field>
+    <input placeholder="Author" type="text" (keyup)="onChangeEvent($event)" matInput formControlName="Author">
+    <ul class="search-result">
+    <li *ngFor= "let author of authors">{{author.firstName}} {{author.lastName}}</li>
+  </ul>
+   </mat-form-field>
+    <!-- <mat-form-field>
       <input placeholder="AuthorId" matInput type="number" formControlName="AuthorId"/>
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field>
       <input placeholder="Price" matInput type="number" formControlName="Price"/>
     </mat-form-field>
@@ -69,6 +75,6 @@
       <button mat-flat-button (click)="Cancel()">Cancel</button>
     </div>
   </form>
-</div>
+<!-- </div> -->
 </mat-card>
 
