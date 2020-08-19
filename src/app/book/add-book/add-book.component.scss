@@ -15,27 +15,26 @@
 }
 
 mat-card{
-  background-color: white;
+  background-color: white; //stavi white, ovo je tako jer mi naslovi nece promijeniti boju u crno!
   overflow: auto;
-  color: black ;
+  color: black !important ;
   h2{
-    color: black;
+    color: black ;
     text-align: center;
 
   }
 
-
-
 }
 
-
-
 form{
+
+
   width: 400px;
   margin: 0 auto;
 
   mat-form-field{
   width: 100%;
+
   }
 
   span {
@@ -46,11 +45,10 @@ form{
     button{
     float: right;
   }
+
 }
 }
 
-::placeholder{
-  color: black !important;
-}
+
 
 

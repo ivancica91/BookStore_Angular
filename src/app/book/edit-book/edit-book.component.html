@@ -7,10 +7,10 @@
     <mat-form-field>
       <input placeholder="Title " matInput formControlName="title"/>
     </mat-form-field>
-    <!-- <mat-form-field>
-      <input placeholder="AuthorId" matInput type="number" formControlName="authorId"/>
-    </mat-form-field> -->
     <mat-form-field>
+      <input placeholder="AuthorId" matInput type="number" formControlName="authorId"/>
+    </mat-form-field>
+    <mat-form-field *ngIf="show">
       <input placeholder="Author" matInput formControlName="author"/>
     </mat-form-field>
     <mat-form-field>

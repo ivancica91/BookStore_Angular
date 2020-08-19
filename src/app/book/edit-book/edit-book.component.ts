@@ -36,7 +36,7 @@ export class EditBookComponent implements OnInit {
   id: new FormControl(),
   title: new FormControl(),
   author: new FormControl(),
-  // authorId: new FormControl(),
+  authorId: new FormControl(),   //  ovdje mora bit id jer u backu uzimmao id za update!!!
   price: new FormControl(),
   description: new FormControl(),
   condition: new FormControl([''].toString),

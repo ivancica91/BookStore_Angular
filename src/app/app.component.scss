@@ -13,7 +13,7 @@ nav{
     .main-title{
       position: absolute;
     font-family: PermanentMarker, sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 10px;
     display: inline-block;
     padding-top: 5px;
@@ -29,7 +29,7 @@ nav{
   }
   li{
     display:inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
 margin-left: 20px;
 margin-right: 10px;
     padding-top: 5px;
@@ -50,6 +50,30 @@ margin-right: 10px;
   }
 
 
+/* ----Footer Section--------*/
+#footer {
+  background-color: black;
+  min-height: unset;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-icons i {
+  font-size: 2rem;
+  // padding: 0.5vw;   s ovim natpisi dodu kraj ikone, ali ne svida mi se, bolje s marginom
+  margin-bottom: 1vw;
+  margin-left: 1vw; // for same space between them,  ALI bjeze mi naslovi, daleko od ikona
+  color: white;
+
+}
+.footer-icons i:hover {
+  color: red;
+}
+.footer-text {
+  color: white;
+  text-align: center;
+}
 
 
 

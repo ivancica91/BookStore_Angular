@@ -1,3 +1,4 @@
+import { BookAuthor } from './../../Book';
 import { AuthorService } from './../../author.service';
 import { Author } from './../../Author';
 import { MatSelectModule } from '@angular/material/select';
@@ -65,7 +66,7 @@ export class AddBookComponent implements OnInit {
       author: this.bookForm.controls.Author.value,
       // firstName: this.bookForm.controls.FirstName.value,
       // lastName: this.bookForm.controls.LastName.value,
-      // authorId: this.bookForm.controls.AuthorId.value,
+      authorId: this.bookForm.controls.AuthorId.value,
       title: this.bookForm.controls.Title.value,
       price:  this.bookForm.controls.Price.value,
       description:  this.bookForm.controls.Description.value,

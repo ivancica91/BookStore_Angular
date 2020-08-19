@@ -5,3 +5,7 @@ body{
 
 html, body { height: 100%; background-color: whitesmoke !important;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field-label {  //overwrote the color of placeholder text because of white background
+  color:black !important;
+}

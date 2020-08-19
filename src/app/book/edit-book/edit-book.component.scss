@@ -1,6 +1,6 @@
 
 mat-card{
-  background-color: white;
+  background-color: white; //stavi white, ovo je tako jer mi naslovi nece promijeniti boju u crno!
   overflow: auto;
   color: black ;
   h2{
@@ -29,6 +29,4 @@ form{
   }
 
 }
-::placeholder{ //popraviti, ne prikazuje naslove
-  color: black !important;
-}
+

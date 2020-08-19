@@ -1,24 +1,34 @@
-<!-- navigation bar ---------------------------------------------->
+<!-- navigation bar ------------------------------------------------------------------------->
 <nav>
 <div class = "col-8 offset-2">
-  <!-- main-title -->
-  <h1 [routerLink] = "['home']" class="main-title" > Book Store </h1>
-  <ul>
-  <ul class="searchContainer" id="search">
-  <app-book-search></app-book-search>
-  </ul>
+<!-- main-title --------------------------------------------------->
+<h1 [routerLink] = "['home']" class="main-title" > Book Store </h1>
+<ul>
+<ul class="searchContainer" id="search">
+<app-book-search></app-book-search>
+</ul>
 
 <li [routerLink]= "['book','add']"><a>Add new book</a></li>
-  <li *ngIf = "!user" [routerLink]="['login']"><a>Login <i class="far fa-user"></i></a></li>
-  <li *ngIf = "user" (click)= "Logout()"><a>Logout: {{user.username}}</a></li>
+<li *ngIf = "!user" [routerLink]="['login']"><a>Login <i class="far fa-user"></i></a></li>
+<li *ngIf = "user" (click)= "Logout()"><a>Logout: {{user.username}}</a></li>
 
+<!-- Book List -->
 </ul>
 </div>
 </nav>
 <div class="container" id = "contentContainer">
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 </div>
 
+<!-- Footer section -->
+<section id="footer">
+<div class="footer-icons">
+  <a href="" target="_blank" rel="noopener"  routerLink="/redirect" [queryParams]="{ url:'https://github.com/ivancica91'}"><i class="fab fa-github" title="Github"></i></a>
+  <!-- ok, treba ubaciti novi service za redirect, https://medium.com/wizdm-genesys/angular-redirecting-to-external-links-bd3e785325c6 -->
+  <a href="" target="_blank" rel="noopener"><i class="fab fa-linkedin" title="Linkedin"></i></a>
+  <p class="footer-text"> Antonio Ivancic - 2020</p>
+</div>
+</section>
 
 
 

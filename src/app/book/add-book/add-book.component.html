@@ -11,10 +11,10 @@
 
 </mat-card> -->
 
-<mat-card class = "col-8 offset-2">
+<mat-card  class = "col-8 offset-2" >
   <h2>Add new book</h2>
   <!-- <div class="formF"> -->
-  <form [formGroup]= "bookForm">
+  <form [formGroup]= "bookForm" >
     <mat-form-field *ngIf="show">
       <input placeholder="Id" matInput formControlName="Id"/>
     </mat-form-field >
@@ -39,9 +39,9 @@
     <li *ngFor= "let author of authors">{{author.firstName}} {{author.lastName}}</li>
   </ul>
    </mat-form-field>
-    <!-- <mat-form-field>
+    <mat-form-field *ngIf="show">
       <input placeholder="AuthorId" matInput type="number" formControlName="AuthorId"/>
-    </mat-form-field> -->
+    </mat-form-field>
     <mat-form-field>
       <input placeholder="Price" matInput type="number" formControlName="Price"/>
     </mat-form-field>

@@ -29,12 +29,15 @@
   color: white;
 }
 #search-box {
-
   position: relative;
+  margin-right: 5px; //pomaknuo bi jos lijevo, ali mi search results idu preko book liste
   left: 265px;
 bottom: 30px;
   width: 200px;
   height: 30px;
+  border-radius: 12px; //mozda maknuti, treba li nam zaobljeni search box?
+  border: none;
+
 }
 
 
