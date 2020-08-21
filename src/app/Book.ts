@@ -1,5 +1,5 @@
 
-export class Book {
+export interface Book {
   id?: number;
   title: string ;
   author: BookAuthor;
@@ -10,9 +10,20 @@ export class Book {
   imageSrc: string;
 }
 
-export class BookAuthor
+export interface BookAuthor
 {
   id: string;
   fullName: string
+}
+
+export interface PostBook
+{
+  authorId?: number;
+  authorFullName? : string;
+  title: string;
+  description: string;
+  condition: string;
+  price: number;
+  imageSrc: string;
 }
 

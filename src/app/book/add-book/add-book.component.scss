@@ -1,17 +1,13 @@
+/*----------- Search Author-------------- */
 .search-result li {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  width: auto;
-  height: auto;
   padding: 5px;
   background-color: white;
-  cursor: pointer;
   list-style-type: none;
 }
 .search-result li:hover {
   background-color: whitesmoke;
   height: auto;
+
 }
 
 mat-card{

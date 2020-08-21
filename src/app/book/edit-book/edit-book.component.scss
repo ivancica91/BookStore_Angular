@@ -1,4 +1,14 @@
+/*----------- Search Author-------------- */
+.search-result li {
+  padding: 5px;
+  background-color: white;
+  list-style-type: none;
+}
+.search-result li:hover {
+  background-color: whitesmoke;
+  height: auto;
 
+}
 mat-card{
   background-color: white; //stavi white, ovo je tako jer mi naslovi nece promijeniti boju u crno!
   overflow: auto;

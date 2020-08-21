@@ -1,10 +1,10 @@
 import { Author } from './Author';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { Book } from './Book';
+import { Book, PostBook } from './Book';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
-import { tap, catchError } from 'rxjs/operators'
+import { tap, catchError, map } from 'rxjs/operators'
 import { title } from 'process';
 
 
@@ -49,8 +49,13 @@ private handleError<T>(operation = 'operation', result?: T) {
   return this.http.get<Book>(baseUrl + id);
  }
 
- AddBook(book: Book): Observable<Book>{
-  return this.http.post<Book>(baseUrl, book);
+ AddBook(book: PostBook): Observable<number> {
+
+  console.log(book)
+   return this.http.post<number>(baseUrl, book)
+    .pipe(
+      map((response) => response)
+    );
  }
 
  UpdateBook(book: Book): Observable <any> {

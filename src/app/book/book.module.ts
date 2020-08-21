@@ -27,7 +27,7 @@ imports: [
   CommonModule,
   MatAutocompleteModule,
   RouterModule.forChild([{
-    path: 'home', component: BookListComponent
+    path: 'books', component: BookListComponent
     },{
       path: 'book/:id/edit', component: EditBookComponent
     }, {

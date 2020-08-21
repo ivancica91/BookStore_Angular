@@ -12,14 +12,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BookSearchComponent } from './book/book-search/book-search.component';
 
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +32,7 @@ import { BookSearchComponent } from './book/book-search/book-search.component';
     RouterModule.forRoot([{
       path: 'login', loadChildren: () => import('./loginmodule/login.module').then(m => m.LoginModule)
     },{
-      path: '', redirectTo: 'home', pathMatch: 'full'
+      path: '', redirectTo: 'books', pathMatch: 'full'
     },{
       path: '**', component: NotFoundComponent
     }])

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Author } from './Author';
+import { Author, AuthorPost } from './Author';
 
 const authorUrl = 'http://localhost:44384/api/Authors/'
 
@@ -31,7 +31,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     return of(result as T);
   };
 }
-AddAuthor(author: Author): Observable<Author>{
+AddAuthor(author: AuthorPost): Observable<Author>{
   return this.http.post<Author>(authorUrl, author);
  }
 

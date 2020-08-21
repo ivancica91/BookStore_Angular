@@ -1,4 +1,4 @@
-import { BookAuthor } from './../../Book';
+import { BookAuthor, PostBook } from './../../Book';
 import { AuthorService } from './../../author.service';
 import { Author } from './../../Author';
 import { MatSelectModule } from '@angular/material/select';
@@ -18,7 +18,7 @@ import { Book } from 'src/app/Book';
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.scss']
 })
-export class AddBookComponent implements OnInit {
+export class AddBookComponent{
   bookForm:FormGroup;
   show: boolean = false;
   authors: Author[] = [];
@@ -27,63 +27,48 @@ export class AddBookComponent implements OnInit {
     private formbuilder:FormBuilder,
     private router: Router,
     private bookService: BookService,
-    private authorService: AuthorService, ) {
+    private authorService: AuthorService) {
 
-      this.bookForm = new FormGroup({
-      Title: new FormControl(''),
-      // AuthorId: new FormControl(''),
-      Author: new FormControl(''), // sta da ovdje stavim da mogu hvatat searchbyauthor?
-      // FirstName: new FormControl(''),
-      // LastName: new FormControl(''),
-      Price: new FormControl(''),
-      Description: new FormControl(''),
-      Condition: new FormControl([''].toString),
-      ImageUrl: new FormControl(''),
-
-        });
-
-
+    this.bookForm = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+      authorName: new FormControl(undefined),
+      authorId: new FormControl(undefined),
+      price: new FormControl(0, [Validators.min(5)]),
+      description: new FormControl(''),
+      condition: new FormControl('new', [Validators.required]),
+      imageUrl: new FormControl('')});
   }
 
-  ngOnInit(): void {
-
+  onAuthorChange(event: any): void {
+    this.authorService.searchAuthorByFirstname(event.target.value).subscribe(response => {
+      this.authors = response;
+      this.bookForm.controls.authorName.setValue(event.target.value);
+      this.bookForm.controls.authorId.setValue(undefined);
+    });
   }
-
-  onChangeEvent(event: any): void {
-
-    this.authorService.searchAuthorByFirstname(event.target.value).subscribe(s => {
-      console.log(s)
-
-    this.authors = s;
-
-  });
-  }
-
-
 
   Save() {
-    const book: Book = {
-      author: this.bookForm.controls.Author.value,
-      // firstName: this.bookForm.controls.FirstName.value,
-      // lastName: this.bookForm.controls.LastName.value,
-      authorId: this.bookForm.controls.AuthorId.value,
-      title: this.bookForm.controls.Title.value,
-      price:  this.bookForm.controls.Price.value,
-      description:  this.bookForm.controls.Description.value,
-      condition:  this.bookForm.controls.Condition.value,
-      imageSrc:  this.bookForm.controls.ImageUrl.value
-      };
-      this.bookService.AddBook(book).subscribe( options => this.router.navigate(['/home']));
+    const newBook : PostBook = {
+        authorId: this.bookForm.controls.authorId.value ?? undefined,
+        authorFullName: this.bookForm.controls.authorId != null ? this.bookForm.controls.authorName.value : undefined,
+        title: this.bookForm.controls.title.value,
+        price: this.bookForm.controls.price.value,
+        description: this.bookForm.controls.description.value,
+        imageSrc: this.bookForm.controls.imageUrl.value,
+        condition: this.bookForm.controls.condition.value
+    }
 
+    this.bookService.AddBook(newBook).subscribe(bookId => this.router.navigate(['book', bookId]));
+  };
 
-    };
-
-
+  onAuthorClick(author: any) {
+      this.bookForm.controls.authorId.setValue(author.id);
+      this.bookForm.controls.authorName.setValue(author.firstName + ' ' + author.lastName);
+      this.authors = [];
+  };
 
   Cancel(){
-    this.router.navigate(['/home']);
-  }
-
-
-
+    //console.log(this.bookForm)
+    this.router.navigate(['/books'])
+  };
 }

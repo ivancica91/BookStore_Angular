@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { BookService } from 'src/app/book.service';
 import { Book } from 'src/app/Book';
@@ -12,12 +12,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./book-details.component.scss']
 })
 export class BookDetailsComponent implements OnInit {
-  private router: Router
   book: Book;
 
 
   constructor(private bookService: BookService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) =>{
@@ -28,7 +27,7 @@ export class BookDetailsComponent implements OnInit {
   }
 
 DeleteBook(id){
-console.log("deleting" + id);
-this.bookService.DeleteBook(id).subscribe( options => this.router.navigate(['/home']));
+console.log("deleting " + id);
+this.bookService.DeleteBook(id).subscribe( options => this.router.navigate(['/books']));
 }
 }
