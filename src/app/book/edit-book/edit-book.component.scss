@@ -1,20 +1,28 @@
+$primary: white;
+$secondary: whitesmoke;
+$font-color: black;
+$span: red;
+
+
 /*----------- Search Author-------------- */
 .search-result li {
+  position: relative;
+  margin-left: -40px;
   padding: 5px;
-  background-color: white;
+  background-color: $primary;
   list-style-type: none;
 }
 .search-result li:hover {
-  background-color: whitesmoke;
+  background-color: $secondary;
   height: auto;
 
 }
 mat-card{
-  background-color: white; //stavi white, ovo je tako jer mi naslovi nece promijeniti boju u crno!
+  background-color: $primary;
   overflow: auto;
-  color: black ;
+  color: $font-color;
   h2{
-    color: black;
+    color: $font-color;
     text-align: center;
 
   }
@@ -35,7 +43,7 @@ form{
 
   span {
     font-size: 13px;
-    color: rgb(199, 6, 6);
+    color: $span;
   }
 
 }

@@ -1,40 +1,69 @@
+$deviceXXs: "(max-width: 335px)";
+@mixin respond-to ($breakpoint) {
+  @if $breakpoint =="deviceXXs"{
+    @media (max-width: 335px){
+      @content;
+    }
+}
+}
+
+$primary: white;
+$secondary: whitesmoke;
+$font-color: black;
+$search-hover: gray;
+$span: red;
+
 /* BoookSearch private styles */
 .search-result li {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-bottom: 1px solid $search-hover;
+  border-left: 1px solid $search-hover;
+  border-right: 1px solid $search-hover;
   width: 200px;
+  @include respond-to(deviceXXs){
+    width: 100px;
+    font-size: x-small;
+  }
   height: auto;
   padding: 5px;
-  background-color: white;
+  background-color: $primary;
   cursor: pointer;
   list-style-type: none;
 }
 
 .search-result li:hover {
-  background-color: #607D8B;
+  background-color: $search-hover;
   height: auto;
+
 }
 
 .search-result li a {
-  color: #888;
+  color: $search-hover;
   display: block;
   text-decoration: none;
 }
 
-.search-result li a:hover {
-  color: white;
+.search-result li {
+  & a:hover{
+  color: $primary;
 }
-.search-result li a:active {
-  color: white;
+  & a:active {
+  color: $primary;
 }
+}
+
+
 #search-box {
-  position: relative;
-  margin-top: 5px;
-  margin-right: 80px; //pomaknuo bi jos lijevo, ali mi search results idu preko book liste
-  left: 265px;
+  position: right;
+  margin-top: 10px;;
+  // margin-top: 5px;
+  // margin-right: 80px; //pomaknuo bi jos lijevo, ali mi search results idu preko book liste
+  // left: 265px;
 bottom: 30px;
   width: 200px;
+  @include respond-to(deviceXXs){
+    width: 100px;
+    height: 25px;
+  }
   height: 30px;
   border-radius: 12px; //mozda maknuti, treba li nam zaobljeni search box?
   border: none;
@@ -43,8 +72,8 @@ bottom: 30px;
 
 
 ul.search-result {
-  position: relative;
-  left: 265px;
+  position: right;
+  // left: 265px;
   bottom: 30px;
   margin-top: 0;
   padding-left: 0;

@@ -1,7 +1,6 @@
-<mat-card  class = "col-8 offset-2" >
 
+  <mat-card>
   <h2>Add new book</h2>
-
   <form [formGroup]= "bookForm" >
     <mat-form-field>
       <input placeholder="Title" matInput formControlName="title"/>
@@ -37,8 +36,8 @@
     </mat-form-field>
 
     <div class = "buttonContainer">
-      <button mat-flat-button type="button" color = "primary" [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
-      <button mat-flat-button (click)="Cancel()">Cancel</button>
+      <button mat-flat-button  type="button" color = "primary"  [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
+      <button mat-flat-button type="button" (click)="Cancel()" >Cancel</button>
     </div>
   </form>
 </mat-card>

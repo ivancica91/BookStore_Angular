@@ -1,6 +1,10 @@
-<div class = "row">
-  <div *ngFor= "let book of books" class= "col-3">
+<!-- <div class = "row">  div class = "box" -->
+  <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="center center"   class="flex-box">
+      <div *ngFor= "let book of books" class= "book-box">
     <app-book [book]="book">
     </app-book>
-  </div>
-</div>
+    </div>
+ </div>
+
+
+

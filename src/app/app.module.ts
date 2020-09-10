@@ -11,17 +11,27 @@ import { BookModule } from './book/book.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BookSearchComponent } from './book/book-search/book-search.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HeaderComponent } from './book/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
     BookSearchComponent,
+    HeaderComponent,
 
 
   ],
   imports: [
     MatCardModule,
+    MatGridListModule,
+    MatTooltipModule,
     FormsModule,
     MatButtonModule,
     MatInputModule,
@@ -29,6 +39,9 @@ import { BookSearchComponent } from './book/book-search/book-search.component';
     HttpClientModule,
     BrowserAnimationsModule,
     BookModule,
+    MatToolbarModule,
+    MatIconModule,
+    FlexLayoutModule,
     RouterModule.forRoot([{
       path: 'login', loadChildren: () => import('./loginmodule/login.module').then(m => m.LoginModule)
     },{
@@ -40,4 +53,6 @@ import { BookSearchComponent } from './book/book-search/book-search.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private mediaObserver: MediaObserver) {} //nne znam treba li mi ovo mediaObserver
+ }

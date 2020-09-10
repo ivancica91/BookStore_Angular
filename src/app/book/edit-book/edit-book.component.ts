@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { BookService } from 'src/app/book.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book } from 'src/app/Book';
+import { Book, PutBook } from 'src/app/Book';
 import { Author } from 'src/app/Author';
 
 @Component({
@@ -61,6 +61,15 @@ onAuthorClick(author: any) {
 };
 
 SaveChanges(){
+  const bookEdit: PutBook = {
+    authorId: this.bookForm.controls.authorId.value ?? undefined,
+        authorFullName: this.bookForm.controls.authorId != null ? this.bookForm.controls.authorName.value : undefined,
+        title: this.bookForm.controls.title.value,
+        price: this.bookForm.controls.price.value,
+        description: this.bookForm.controls.description.value,
+        imageSrc: this.bookForm.controls.imageSrc.value,
+        condition: this.bookForm.controls.condition.value
+  }
 this.service.UpdateBook(this.bookForm.value)
 .subscribe(Book => {
 this.router.navigate(['/books']); //ne mogu dobiti da me nakon sejvanja vrati na book- details, kaze Cannot read property ‘id’ of undefined

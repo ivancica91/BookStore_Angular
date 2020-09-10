@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+   <div>
+<button mat-button>
+  <span [routerLink] = "['']" class="main-title">Book Store</span>
+</button>
+   </div>
+   <div>
+<button mat-button [routerLink]="['book', 'add']" *ngIf="!deviceXs">Add new book</button>
+   </div>
+   <div>
+     <app-book-search *ngIf="!deviceXs"></app-book-search>
+   </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="center center">
+    <div>
+    <button mat-button [routerLink]="['book', 'add']" *ngIf="deviceXs" >Add new book</button>
+    </div>
+    <div>
+      <app-book-search *ngIf="deviceXs"></app-book-search>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

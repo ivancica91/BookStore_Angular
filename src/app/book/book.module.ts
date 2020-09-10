@@ -13,7 +13,10 @@ import { CommonModule } from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import {LayoutModule} from '@angular/cdk/layout';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
 declarations:[
@@ -25,7 +28,9 @@ declarations:[
   ],
 imports: [
   CommonModule,
+  MatGridListModule,
   MatAutocompleteModule,
+  MatTooltipModule,
   RouterModule.forChild([{
     path: 'books', component: BookListComponent
     },{
@@ -40,6 +45,7 @@ imports: [
   MatButtonModule,
   MatCardModule,
   MatInputModule,
+  FlexLayoutModule,
   MatSelectModule
   ]
 })

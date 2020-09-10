@@ -1,7 +1,10 @@
-
+/* ----------------------------- Mat toolbar test--------------------------------------------- */
+.example-spacer {
+  flex: 1 1 auto;
+}
 /* navigation bar*/
 nav{
-  // background-image: url(https://image.freepik.com/free-photo/wooden-table_36051-46.jpg);
+   //background-image: url(https://image.freepik.com/free-photo/wooden-table_36051-46.jpg);
   background-color: whitesmoke;
    color: black;
    height: 80px;
@@ -15,6 +18,7 @@ nav{
     font-family: PermanentMarker, sans-serif;
     font-size: 3rem;
     margin-top: 10px;
+    margin-left: 50px;
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -25,10 +29,12 @@ nav{
   }
   ul{
     margin: 0;
+
     float: right;
+
   }
   li{
-    display:inline-block;
+   display:inline-block;
     margin-top: 20px;
 margin-left: 20px;
 margin-right: 10px;
@@ -74,6 +80,19 @@ margin-right: 10px;
   color: white;
   text-align: center;
 }
+
+
+//small tablets and large smartphones (landscape)
+$screen-sm-min: 576px;
+
+//small tablets (portrait view)
+$screen-md-min: 768px;
+
+//tablets and small desktops
+$screen-lg-min: 992px;
+
+//Large tablets and desktops
+$screen-xl-min: 1200px;
 
 
 

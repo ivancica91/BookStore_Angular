@@ -27,3 +27,13 @@ export interface PostBook
   imageSrc: string;
 }
 
+export interface PutBook{
+  authorId?: number;
+  authorFullName? : string;
+  title: string;
+  description: string;
+  condition: string;
+  price: number;
+  imageSrc: string;
+}
+

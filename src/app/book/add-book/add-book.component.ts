@@ -6,7 +6,7 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 
 import { Observable } from 'rxjs';
 import { BookService } from '../../book.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/Book';
@@ -22,6 +22,7 @@ export class AddBookComponent{
   bookForm:FormGroup;
   show: boolean = false;
   authors: Author[] = [];
+  @Input() deviceXs: boolean;
 
   constructor(
     private formbuilder:FormBuilder,
@@ -50,7 +51,7 @@ export class AddBookComponent{
   Save() {
     const newBook : PostBook = {
         authorId: this.bookForm.controls.authorId.value ?? undefined,
-        authorFullName: this.bookForm.controls.authorId != null ? this.bookForm.controls.authorName.value : undefined,
+        authorFullName: this.bookForm.controls.authorId != null ? this.bookForm.controls.authorName.value : undefined, // ako je authorID != null, AuthorFullName = AuthorId, else authorName = undefined
         title: this.bookForm.controls.title.value,
         price: this.bookForm.controls.price.value,
         description: this.bookForm.controls.description.value,

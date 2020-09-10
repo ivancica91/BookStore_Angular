@@ -1,0 +1,28 @@
+ $deviceXXs: "(max-width: 335px)";
+@mixin respond-to ($breakpoint) {
+  @if $breakpoint =="deviceXXs"{
+    @media (max-width: 335px){
+      @content;
+    }
+}
+}
+/*------------------------ Main title-------------------------------- */
+@font-face { font-family: PermanentMarker; src: url(../assets/font/PermanentMarker.ttf);}
+    .main-title{
+      position: relative;
+    font-family: PermanentMarker, sans-serif;
+    font-size: 3rem;
+    @include respond-to(deviceXXs){
+      font-size: 2rem;
+    }
+    cursor: pointer;
+
+    // margin-top: 10px;
+    // margin-left: 50px;
+    // display: inline-block;
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+    // outline-style: none;
+  }
+
+

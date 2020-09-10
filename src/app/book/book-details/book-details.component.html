@@ -6,7 +6,7 @@
   <p *ngIf="book.author">{{book.author.fullName}}</p>   <!-- | uppercase -->
   <p>{{book.price | currency : '€ '}}</p>
   <p>{{book.description}}</p>
-  <p>{{book.condition}}</p>
+  <!-- <p>{{book.condition}}</p> -->
   </div>
   <div class = "btnUpdate">
     <button type="button" mat-flat-button color="primary" [routerLink]="['edit']">Update Book</button>

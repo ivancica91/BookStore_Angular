@@ -1,12 +1,50 @@
+$primary: white;
+$secondary: whitesmoke;
+$font-color: black;
+$span: red;
 
+// @include respond-to('sm'){}
+// @include respond-to('md'){}
+// @include respond-to('lg'){}
+// @include respond-to('xl'){}
+
+// @mixin respond-to($breakpoint){
+//   @if $breakpoint == "sm" {
+//        @media (min-width:576px) {
+//          @content;
+//        }
+//   }
+//   @else if $breakpoint == "md" {
+//     @media (min-width:768px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == "lg" {
+//     // Large devices (desktops, 992px and up)
+//     @media (min-width:992px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == "xl" {
+//     @media (min-width:1200px) {
+//       @content;
+//     }
+//   }
+// }
+
+
+
+// -------------------------------------------------- xtra small---------------------------------------------------
 mat-card{
-background-color: white;
-margin: 5px;
-margin-bottom: 20px;
 position: relative;
 text-align: center;
-height: 500px;
 outline-style: none;
+background-color: $primary;
+margin: 5px;
+margin-bottom: 20px;
+height: 500px;
+font-size: small;
+}
 
 img{
 width: 100%;
@@ -16,7 +54,11 @@ padding-right: 2px;
 
  .bookDataContainer{
   padding: 10px; //razmak izmedu slike i podataka
-  color: black;
+  color: $font-color;
+  text-align: center;
+  h1{
+    font-size: 2vw;
+  }
   }
 
   .overlay{
@@ -25,15 +67,72 @@ padding-right: 2px;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: white;
+    background-color: $primary;
     opacity: 0;
     transition: 0.3s ease;
     cursor: pointer;
   }
-}
+
 
 mat-card :hover.overlay{
   opacity: 0.3;
 }
 
 
+// ----------------------------------Responsive design for bigger screens----------------------------------------------------
+
+// mat-card{
+
+//   position: relative;
+// text-align: center;
+// outline-style: none;
+// @include respond-to('sm'){
+// background-color: $primary !important;
+// margin: 5px;
+// margin-bottom: 5px;
+// height: 400px;
+// }
+// @include respond-to('md'){
+//   background-color: green !important;
+// margin: 5px;
+// margin-bottom: 20px;
+// height: 300px;
+// }
+// @include respond-to('lg'){
+//   background-color: red !important;
+// margin: 5px;
+// margin-bottom: 20px;
+// height: 500px;
+// }
+// @include respond-to('xl'){
+//   background-color: blue !important;
+// margin: 5px;
+// margin-bottom: 20px;
+// height: 500px;
+// }
+// }
+
+// img{
+//   width: 100%;
+//   padding-left: 2px;
+//   padding-right: 2px;
+//   }
+
+//  .bookDataContainer{
+//   color: $font-color;
+//   @include respond-to('sm'){
+//     //padding: 1px;
+//     text-align: center;
+//    } //razmak izmedu slike i podataka
+//   @include respond-to('md'){
+//     //padding: 13px;} //razmak izmedu slike i podataka
+//   @include respond-to('lg'){
+//     //padding: 5px;} //razmak izmedu slike i podataka
+//   @include respond-to('xl'){
+//     //padding: 10px;} //razmak izmedu slike i podataka
+
+
+//   }
+//   }
+//   }
+//  }

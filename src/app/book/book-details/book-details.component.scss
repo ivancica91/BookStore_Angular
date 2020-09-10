@@ -1,26 +1,29 @@
+$primary: white;
+$secondary: whitesmoke;
+$font-color: black;
+$span: red;
+
 mat-card{
   padding: 20px;
   margin: 5px;
   position: relative;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: $secondary;
   outline-style: none;
 
  img{
    position: center;
-
-
  }
 
  .bookDataContainer{
   width: 100%;
   padding: 10px; //razmak izmedu slike i podataka
-  color: black;
+  color: $font-color;
   }
 
   .buttonContainer{
-    color:black;
-background-color: whitesmoke;
+    color:$font-color;
+background-color: $secondary;
     position: absolute; left: 0px;
     font-size: 2rem;
     outline-style: none;

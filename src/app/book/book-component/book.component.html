@@ -1,4 +1,5 @@
-
+<!-- <div class="col-sm">   ovo se koristi za bootstrap, vidi kako angular materials-->
+  <div fxLayout="row" fxLayout.xs="column">    <!--ovo za angular mat? ali ne radi nista-->
 <mat-card [routerLink] = "['/book', book.id]">
   <img [src]="book.imageSrc"/>
   <div class = "bookDataContainer">
@@ -12,4 +13,5 @@
   </div>
   <div class = "overlay"></div>
 </mat-card>
+</div>
 
