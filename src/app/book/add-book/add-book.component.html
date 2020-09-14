@@ -1,6 +1,6 @@
 
   <mat-card>
-  <h2>Add new book</h2>
+    <mat-card-title class="title" fxLayoutAlign="center center">Add new book </mat-card-title>
   <form [formGroup]= "bookForm" >
     <mat-form-field>
       <input placeholder="Title" matInput formControlName="title"/>
@@ -35,9 +35,10 @@
       <input placeholder="Image Url" matInput formControlName="imageUrl"/>
     </mat-form-field>
 
-    <div class = "buttonContainer">
-      <button mat-flat-button  type="button" color = "primary"  [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
-      <button mat-flat-button type="button" (click)="Cancel()" >Cancel</button>
+
+      <div fxLayout="row" class = "buttonContainer">
+      <button mat-flat-button  fxLayoutAlign= "center center"  type="button" color = "primary"  [disabled]="!bookForm.valid" (click)="Save()" >Add</button>
+      <button mat-flat-button fxLayoutAlign= "center center"  type="button" (click)="Cancel()" >Cancel</button>
     </div>
   </form>
 </mat-card>

@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { BookService } from 'src/app/book.service';
@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class BookDetailsComponent implements OnInit {
   book: Book;
+  @Input() deviceXs: boolean;
 
 
   constructor(private bookService: BookService,
@@ -28,7 +29,7 @@ export class BookDetailsComponent implements OnInit {
 
 DeleteBook(id){
 console.log("deleting " + id);
-this.bookService.DeleteBook(id).subscribe (options => options.this.router.navigate(['/books']));   //opet ne brise prije refresha
+this.bookService.DeleteBook(id).subscribe (options => this.router.navigate(['/books']));   //opet ne brise prije refresha
 
 }
 }

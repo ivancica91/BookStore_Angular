@@ -1,6 +1,6 @@
 import { Author } from './Author';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-import { Book, PostBook } from './Book';
+import { Book, PostBook, PutBook } from './Book';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
@@ -58,8 +58,8 @@ private handleError<T>(operation = 'operation', result?: T) {
     );
  }
 
- UpdateBook(book: Book): Observable <any> {
- return this.http.put(baseUrl + book.id, book);
+ UpdateBook(bookId: number, book: PutBook): Observable <any> {
+   return this.http.put(baseUrl + bookId, book);
  }
 
  DeleteBook(id: number): Observable <any>{

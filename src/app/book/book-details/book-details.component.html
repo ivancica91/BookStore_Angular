@@ -1,3 +1,4 @@
+
 <mat-card *ngIf="book">
   <button mat-flat-button class ="buttonContainer" color ="primary" [routerLink]="['/books']"><i class="fas fa-long-arrow-alt-left"></i></button>
   <img [src]="book.imageSrc"/>
@@ -7,12 +8,14 @@
   <p>{{book.price | currency : '€ '}}</p>
   <p>{{book.description}}</p>
   <!-- <p>{{book.condition}}</p> -->
+
   </div>
   <div class = "btnUpdate">
     <button type="button" mat-flat-button color="primary" [routerLink]="['edit']">Update Book</button>
   </div>
   <div class="btnDelete">
-    <button type="button" mat-flat-button color="primary" (click)="DeleteBook(book.id)"[routerLink]="['/books']">Delete book</button>
+    <button type="button" mat-flat-button color="primary" (click)="DeleteBook(book.id)">Delete book</button>
   </div>
   <div class = "overlay"></div>
 </mat-card>
+

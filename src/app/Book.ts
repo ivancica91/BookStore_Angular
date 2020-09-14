@@ -29,7 +29,7 @@ export interface PostBook
 
 export interface PutBook{
   authorId?: number;
-  authorFullName? : string;
+  authorName : string;
   title: string;
   description: string;
   condition: string;

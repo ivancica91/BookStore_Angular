@@ -3,6 +3,14 @@ $secondary: whitesmoke;
 $font-color: black;
 $span: red;
 
+$deviceXXs: "(max-width: 335px)";
+@mixin respond-to ($breakpoint) {
+  @if $breakpoint =="deviceXXs"{
+    @media (max-width: 335px){
+      @content;
+    }
+}
+}
 
 /*----------- Search Author-------------- */
 .search-result li {
@@ -15,30 +23,25 @@ $span: red;
 .search-result li:hover {
   background-color: $secondary;
   height: auto;
-
 }
-
 mat-card{
   background-color: $primary;
   overflow: auto;
   color: $font-color !important ;
-  h2{
-    color: $font-color ;
-    text-align: center;
-
+  &-title{
+    font-size: 2rem;
+    @include respond-to(deviceXXs){
+      font-size: 1rem;
+    }
   }
 
 }
-
 form{
-
-
   width: 400px;
   margin: 0 auto;
 
   mat-form-field{
   width: 100%;
-
   }
 
   span {
@@ -47,7 +50,6 @@ form{
   }
   .buttonContainer{
     button{
-    float: right;
     margin-right: 10px;
 
   }

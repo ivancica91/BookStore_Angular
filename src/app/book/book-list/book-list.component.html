@@ -1,10 +1,15 @@
-<!-- <div class = "row">  div class = "box" -->
+<!-- <mat-card>
   <div fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="center center"   class="flex-box">
       <div *ngFor= "let book of books" class= "book-box">
     <app-book [book]="book">
     </app-book>
     </div>
  </div>
+</mat-card> -->
 
-
-
+<div class="content" fxLayout="column  "  fxLayoutGap="16px grid" fxLayoutAlign="center center">   <!--bilo fxlayout row wrap -->
+  <div *ngFor= "let book of books" >
+      <app-book [book]="book">
+      </app-book>
+  </div>
+</div>

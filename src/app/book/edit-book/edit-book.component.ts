@@ -26,7 +26,8 @@ export class EditBookComponent implements OnInit {
       ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
       this.service.GetBook(params['id'])
-      .subscribe(Book=>{
+      .subscribe(Book=> {
+        this.book = Book;
         this.bookForm.patchValue({...Book}); //ovaj red uzima postojece vrijednosti i upisuje ih u formu koju mozemo onda promijeniti..
         //umjesto setValue stavio patchValue da mogu promijeniti samo neke vrijednosti, tj da mi ne trazi sve..
         // (Use the setValue() method to set a new value for an individual control. The setValue() method strictly adheres to the structure of the form group and replaces the entire value for the control.)
@@ -36,13 +37,13 @@ export class EditBookComponent implements OnInit {
 
   this.bookForm = new FormGroup({
   // id: new FormControl(),
-  title: new FormControl(),
-  authorName: new FormControl(),
-  authorId: new FormControl(),   //  ovdje mora bit id jer u backu uzimmao id za update!!! arijesi u backu, ne radi update!
-  price: new FormControl(),
-  description: new FormControl(),
-  condition: new FormControl([''].toString),
-  imageSrc: new FormControl(),
+    title: new FormControl(),
+    authorName: new FormControl(),
+    authorId: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+    condition: new FormControl([''].toString),
+    imageSrc: new FormControl(),
   });
 }
 
@@ -61,18 +62,9 @@ onAuthorClick(author: any) {
 };
 
 SaveChanges(){
-  const bookEdit: PutBook = {
-    authorId: this.bookForm.controls.authorId.value ?? undefined,
-        authorFullName: this.bookForm.controls.authorId != null ? this.bookForm.controls.authorName.value : undefined,
-        title: this.bookForm.controls.title.value,
-        price: this.bookForm.controls.price.value,
-        description: this.bookForm.controls.description.value,
-        imageSrc: this.bookForm.controls.imageSrc.value,
-        condition: this.bookForm.controls.condition.value
-  }
-this.service.UpdateBook(this.bookForm.value)
+  this.service.UpdateBook(this.book.id, this.bookForm.value)
 .subscribe(Book => {
-this.router.navigate(['/books']); //ne mogu dobiti da me nakon sejvanja vrati na book- details, kaze Cannot read property ‘id’ of undefined
+this.router.navigate(['/books']);
 })
 }
 }

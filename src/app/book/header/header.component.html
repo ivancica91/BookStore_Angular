@@ -6,12 +6,14 @@
 </button>
    </div>
    <div>
-<button mat-button [routerLink]="['book', 'add']" *ngIf="!deviceXs">Add new book</button>
+ <button mat-button [routerLink]="['book', 'add']" *ngIf="!deviceXs">Add new book</button>  <!--*ngIf="!deviceSm && !deviceXs -->
    </div>
    <div>
      <app-book-search *ngIf="!deviceXs"></app-book-search>
    </div>
   </mat-toolbar-row>
+
+
 
   <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="center center">
     <div>
@@ -22,3 +24,5 @@
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<!-- nariktaj da vec na sm ide i add i search dolje, tj da search ide preko cijele sirine, a add ostane gore samo kao plusic -->

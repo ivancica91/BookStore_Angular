@@ -1,4 +1,4 @@
- $deviceXXs: "(max-width: 335px)";
+$deviceXXs: "(max-width: 335px)";
 @mixin respond-to ($breakpoint) {
   @if $breakpoint =="deviceXXs"{
     @media (max-width: 335px){

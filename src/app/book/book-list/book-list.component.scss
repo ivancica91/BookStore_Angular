@@ -1,51 +1,6 @@
-// .box {
-//   display: flex;
-//   flex-wrap: wrap;
-//   // flex-direction: row;
-// }
+mat-card{
+max-width: 100%;
+height: auto;
+background-color:green;   //treba bit tekst unutra, kao i slika; maknuti zelenu kasnije, vratiti whitesmoke
+}
 
-// .box>* {
-//   flex: 1 1  200px;
-// }
-
-// // samo se igram, treba ovo skuziti!
-
-
-
-// .row{
-//   background-color: whitesmoke;
-//     width: 325px;
-//     padding: 25px;
-
-//     // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   width: 425px;
-//         padding: 35px;
-
-//  }
-
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//           width: 600px;
-//         padding: 50px;
-//  }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {  }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {  }
-// }
-
-// .overlay{
-//   // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   width: 425px;
-//         padding: 35px;
-//         position: absolute;
-//         padding-right: 20px;
-//         padding-left: 20px;
-
-
-//  }
-// }

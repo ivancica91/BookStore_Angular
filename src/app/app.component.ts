@@ -2,7 +2,9 @@ import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { LoginService } from './login.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from './user';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 
 
@@ -13,8 +15,10 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   user: User;
-  mediaSub:Subscription;
+  mediaSub: Subscription;
   deviceXs: boolean; // da ne pisemo u svakoj komponenti
+  deviceSm: boolean;
+
 
 
   constructor(private loginService: LoginService, public mediaObserver: MediaObserver) {}
@@ -24,11 +28,16 @@ export class AppComponent implements OnInit, OnDestroy {
       this.user = user;
   });
   this.mediaSub = this.mediaObserver.media$.subscribe(
-    (result:MediaChange) => {
+    (result: MediaChange) => {
     console.log(result.mqAlias);
     this.deviceXs = result.mqAlias === 'xs' ? true : false; // ako je xs, bit ce true, inace false
+    this.deviceSm = result.mqAlias === 'sm' ? true : false;
   }
   );
+
+
+
+
 }
   ngOnDestroy(){
     this.mediaSub.unsubscribe();

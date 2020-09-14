@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MediaObserver } from '@angular/flex-layout';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HeaderComponent } from './book/header/header.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderComponent } from './book/header/header.component';
     NotFoundComponent,
     BookSearchComponent,
     HeaderComponent,
+    FrontPageComponent,
 
 
   ],

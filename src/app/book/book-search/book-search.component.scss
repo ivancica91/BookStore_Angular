@@ -60,6 +60,7 @@ $span: red;
   // left: 265px;
 bottom: 30px;
   width: 200px;
+  font-size: small;
   @include respond-to(deviceXXs){
     width: 100px;
     height: 25px;

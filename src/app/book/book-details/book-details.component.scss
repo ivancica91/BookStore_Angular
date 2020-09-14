@@ -3,22 +3,44 @@ $secondary: whitesmoke;
 $font-color: black;
 $span: red;
 
+$deviceXXs: "(max-width: 335px)";
+@mixin respond-to ($breakpoint) {
+  @if $breakpoint =="deviceXXs"{
+    @media (max-width: 335px){
+      @content;
+    }
+}
+}
+
 mat-card{
   padding: 20px;
   margin: 5px;
   position: relative;
   text-align: center;
-  background-color: $secondary;
+  background-color:$secondary;
   outline-style: none;
 
+  h1{
+    @include respond-to(deviceXXs){
+      font-size: x-small;
+      font-weight: bold;
+        }
+    }
+  }
+
+
  img{
-   position: center;
+   max-width: 100%;
+   height: auto;
  }
 
  .bookDataContainer{
   width: 100%;
   padding: 10px; //razmak izmedu slike i podataka
-  color: $font-color;
+  color:$font-color;
+  @include respond-to(deviceXXs){
+    font-size: x-small;
+      }
   }
 
   .buttonContainer{
@@ -35,4 +57,4 @@ background-color: $secondary;
 }
 
 
-}
+
