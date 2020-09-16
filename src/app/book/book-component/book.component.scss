@@ -1,37 +1,9 @@
-/*--------------------------- makni comment sa svega, al htio bi nekkao srediti taj mat-card -----------------   */
+
 $primary: white;
 $secondary: whitesmoke;
 $font-color: black;
 $span: red;
 
-// // @include respond-to('sm'){}
-// // @include respond-to('md'){}
-// // @include respond-to('lg'){}
-// // @include respond-to('xl'){}
-
-// // @mixin respond-to($breakpoint){
-// //   @if $breakpoint == "sm" {
-// //        @media (min-width:576px) {
-// //          @content;
-// //        }
-// //   }
-// //   @else if $breakpoint == "md" {
-// //     @media (min-width:768px) {
-// //       @content;
-// //     }
-// //   }
-// //   @else if $breakpoint == "lg" {
-// //     // Large devices (desktops, 992px and up)
-// //     @media (min-width:992px) {
-// //       @content;
-// //     }
-// //   }
-// //   @else if $breakpoint == "xl" {
-// //     @media (min-width:1200px) {
-// //       @content;
-// //     }
-// //   }
-// // }
 
 $deviceXXs: "(max-width: 335px)";
 @mixin respond-to ($breakpoint) {

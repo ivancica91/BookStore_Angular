@@ -28,12 +28,12 @@ $span: red;
   background-color: $primary;
   cursor: pointer;
   list-style-type: none;
+
 }
 
 .search-result li:hover {
   background-color: $search-hover;
   height: auto;
-
 }
 
 .search-result li a {
@@ -45,6 +45,7 @@ $span: red;
 .search-result li {
   & a:hover{
   color: $primary;
+
 }
   & a:active {
   color: $primary;
@@ -55,9 +56,6 @@ $span: red;
 #search-box {
   position: right;
   margin-top: 10px;;
-  // margin-top: 5px;
-  // margin-right: 80px; //pomaknuo bi jos lijevo, ali mi search results idu preko book liste
-  // left: 265px;
 bottom: 30px;
   width: 200px;
   font-size: small;
@@ -66,7 +64,7 @@ bottom: 30px;
     height: 25px;
   }
   height: 30px;
-  border-radius: 12px; //mozda maknuti, treba li nam zaobljeni search box?
+  border-radius: 12px;
   border: none;
 
 }
@@ -74,7 +72,6 @@ bottom: 30px;
 
 ul.search-result {
   position: right;
-  // left: 265px;
   bottom: 30px;
   margin-top: 0;
   padding-left: 0;
