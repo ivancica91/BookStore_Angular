@@ -47,8 +47,11 @@ import { FrontPageComponent } from './front-page/front-page.component';
     RouterModule.forRoot([{
       path: 'login', loadChildren: () => import('./loginmodule/login.module').then(m => m.LoginModule)
     },{
-      path: '', redirectTo: 'books', pathMatch: 'full'
-    },{
+      path: '', redirectTo: 'home', pathMatch: 'full'}
+      //{
+    //   path: '', redirectTo: 'books', pathMatch: 'full'
+    // }
+    ,{
       path: '**', component: NotFoundComponent
     }])
   ],

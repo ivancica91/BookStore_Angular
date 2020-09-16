@@ -62,6 +62,8 @@ export class AddBookComponent{
     this.bookService.AddBook(newBook).subscribe(bookId => this.router.navigate(['book', bookId]));
   };
 
+
+
   onAuthorClick(author: any) {
       this.bookForm.controls.authorId.setValue(author.id);
       this.bookForm.controls.authorName.setValue(author.firstName + ' ' + author.lastName);

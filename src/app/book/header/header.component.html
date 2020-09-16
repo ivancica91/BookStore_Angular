@@ -9,6 +9,9 @@
  <button mat-button [routerLink]="['book', 'add']" *ngIf="!deviceXs">Add new book</button>  <!--*ngIf="!deviceSm && !deviceXs -->
    </div>
    <div>
+    <button mat-button [routerLink]="['books']" *ngIf="!deviceXs">Browse BookStore</button>  <!--*ngIf="!deviceSm && !deviceXs -->
+      </div>
+   <div>
      <app-book-search *ngIf="!deviceXs"></app-book-search>
    </div>
   </mat-toolbar-row>

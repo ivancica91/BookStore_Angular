@@ -1,3 +1,5 @@
+import { BookDetailsComponent } from './../book-details/book-details.component';
+import { BookAuthor } from './../../Book';
 import { AuthorService } from './../../author.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { BookService } from 'src/app/book.service';
@@ -46,6 +48,8 @@ export class EditBookComponent implements OnInit {
     imageSrc: new FormControl(),
   });
 }
+
+
 
 onAuthorChange(event: any): void {
   this.authorService.searchAuthorByFirstname(event.target.value).subscribe(response => {

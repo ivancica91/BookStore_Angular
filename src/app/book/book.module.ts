@@ -1,3 +1,4 @@
+import { FrontPageComponent } from './../front-page/front-page.component';
 
 import { NgModule } from "@angular/core";
 import { BookDetailsComponent } from './book-details/book-details.component';
@@ -31,6 +32,8 @@ imports: [
   MatAutocompleteModule,
   MatTooltipModule,
   RouterModule.forChild([{
+    path: 'home', component: FrontPageComponent // dodao za front, ako zeza, makni?!
+  },{
     path: 'books', component: BookListComponent
     },{
       path: 'book/:id/edit', component: EditBookComponent

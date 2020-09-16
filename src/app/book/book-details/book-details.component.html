@@ -4,7 +4,7 @@
   <img [src]="book.imageSrc"/>
   <div class = "bookDataContainer">
   <h1>{{book.title}}</h1>
-  <p *ngIf="book.author">{{book.author.fullName}}</p>   <!-- | uppercase -->
+  <p *ngIf="book.author">{{book.author.fullName}}</p>
   <p>{{book.price | currency : '€ '}}</p>
   <p>{{book.description}}</p>
   <!-- <p>{{book.condition}}</p> -->

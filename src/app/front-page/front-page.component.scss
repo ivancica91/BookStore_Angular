@@ -1,0 +1,49 @@
+/* Container holding the image and the text */
+.container {
+  position: relative;
+}
+
+.img{
+  width: 100%;
+  height: auto;
+}
+
+/* Bottom center text */
+.text-block {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+
+}
+.upper{
+  position: absolute;
+        top: 50px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-size: medium;
+
+}
+
+
+mat-card{
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  background-color: whitesmoke;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+  cursor: pointer;
+&-title{
+  color: black;
+  font-size: small;
+}
+&-subtitle{
+  color: red;
+}
+}

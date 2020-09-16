@@ -13,12 +13,14 @@
     <!-- <mat-form-field *ngIf="show">
       <input placeholder="Author" matInput formControlName="author"/>
     </mat-form-field> -->
+
     <mat-form-field>
       <input placeholder="Author" type="text" formControlName="authorName" (keyup)="onAuthorChange($event)" matInput autocomplete="off">
      </mat-form-field>
      <ul class="search-result">
       <li *ngFor= "let author of authors" (click)="onAuthorClick(author)">{{author.firstName}} {{author.lastName}}</li>
     </ul>
+
     <mat-form-field>
       <input placeholder="Price" matInput type="number" formControlName="price"/>
     </mat-form-field>
@@ -26,6 +28,12 @@
       <textarea placeholder="Description" matInput formControlName="description"></textarea>
     </mat-form-field>
     <mat-form-field>
+
+
+
+
+
+
    <!-- <mat-label>Condition</mat-label>
     <mat-select [formControl]="myControl" required>
       <mat-option>--</mat-option>

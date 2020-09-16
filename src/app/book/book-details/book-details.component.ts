@@ -29,7 +29,7 @@ export class BookDetailsComponent implements OnInit {
 
 DeleteBook(id){
 console.log("deleting " + id);
-this.bookService.DeleteBook(id).subscribe (options => this.router.navigate(['/books']));   //opet ne brise prije refresha
+this.bookService.DeleteBook(id).subscribe (options => this.router.navigate(['/books']));
 
 }
 }
