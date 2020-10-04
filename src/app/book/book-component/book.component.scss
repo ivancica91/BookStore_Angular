@@ -6,17 +6,21 @@ $span: red;
 
 
 $deviceXXs: "(max-width: 335px)";
+$deviceSm: "(max-width: 335px)";
+$deviceMd: "(max-width: 335px)";
 @mixin respond-to ($breakpoint) {
   @if $breakpoint =="deviceXXs"{
     @media (max-width: 335px){
       @content;
     }
+  }
 }
-}
+
 
 mat-card {
   background-color: $secondary;
   font-size: small;
+  margin-bottom: 20px;
 }
 
 .mat-card-image:first-child {
@@ -25,7 +29,9 @@ mat-card {
 
 
 .book {
-  min-width: 500px;
+  //  min-width: 300px;
+  // width: 300px;
+  height: 270px;
 
 }
 
@@ -33,15 +39,18 @@ img {
   margin: 8px;
   transition: transform .2s; /* Animation */
   height: auto;
+  cursor: pointer;
 }
 
+
  .bookDataContainer{
-   margin: 8px;
   color: $font-color;
   text-align: left;
   h1{
+    line-height: 1.3rem;
     font-size: small;
     font-weight: bold;
+    // font-weight: bold;
     @include respond-to(deviceXXs){
         font-size: x-small;
           }
@@ -51,3 +60,5 @@ img {
   img:hover {
     transform: scale(1.02); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
+
+

@@ -15,6 +15,7 @@ export class BookComponent{
  @Output() clickbook: EventEmitter<string> = new EventEmitter();
  show: boolean = false;
 
+
 }
 
 

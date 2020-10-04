@@ -11,15 +11,22 @@ $deviceXXs: "(max-width: 335px)";
 
 
     .main-title{
-      // position: relative;
-      margin-left: 100px;
       font-family: PermanentMarker, sans-serif;
     font-size: 2rem;
+    outline: none;
     @include respond-to(deviceXXs){
       font-size: 1rem;
     }
     cursor: pointer;
   }
+
+  button{
+    outline: none;
+  }
+
+
+
+
 
 
 

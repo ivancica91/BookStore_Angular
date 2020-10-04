@@ -1,7 +1,7 @@
 
 <mat-card *ngIf="book">
   <button mat-flat-button class ="buttonContainer" color ="primary" [routerLink]="['/books']"><i class="fas fa-long-arrow-alt-left"></i></button>
-  <img [src]="book.imageSrc"/>
+  <img mat-card-lg-image [src]="book.imageSrc"/>
   <div class = "bookDataContainer">
   <h1>{{book.title}}</h1>
   <p *ngIf="book.author">{{book.author.fullName}}</p>

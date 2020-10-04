@@ -13,17 +13,20 @@ $font-color: black;
 $search-hover: gray;
 $span: red;
 
-/* BoookSearch private styles */
+
+//kako da stavim width 200px, a da mi tekst ne izlazi van? Stavio overflow hidden, al rade bi da tekst bude u 2-3 reda
 .search-result li {
   border-bottom: 1px solid $search-hover;
   border-left: 1px solid $search-hover;
   border-right: 1px solid $search-hover;
-  width: 200px;
+  overflow: hidden; //any text that goes outside of box will be hidden
+
+width: 200px;
+  font-size: small;
   @include respond-to(deviceXXs){
     width: 100px;
     font-size: x-small;
   }
-  height: auto;
   padding: 5px;
   background-color: $primary;
   cursor: pointer;
@@ -31,24 +34,20 @@ $span: red;
 
 }
 
+//grey color of block when hovering search results
 .search-result li:hover {
   background-color: $search-hover;
-  height: auto;
 }
 
 .search-result li a {
   color: $search-hover;
   display: block;
-  text-decoration: none;
 }
 
+//color of font when hovered
 .search-result li {
   & a:hover{
-  color: $primary;
-
-}
-  & a:active {
-  color: $primary;
+  color: $font-color;
 }
 }
 
@@ -60,7 +59,7 @@ bottom: 30px;
   width: 200px;
   font-size: small;
   @include respond-to(deviceXXs){
-    width: 100px;
+    width: 200px;
     height: 25px;
   }
   height: 30px;
@@ -76,6 +75,7 @@ ul.search-result {
   margin-top: 0;
   padding-left: 0;
   height: 30px;
+
 }
 
 

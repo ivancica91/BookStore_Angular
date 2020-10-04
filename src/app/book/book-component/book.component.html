@@ -1,8 +1,9 @@
 
+
 <mat-card  [routerLink] = "['/book', book.id]" class="book">
-  <div fxLayout='row' fxLayoutAlign='flex-start'>
+  <div fxLayout='row ' fxLayoutAlign='flex-start' class="bookContent" >
     <div>
-      <img mat-card-md-image [src]="book.imageSrc"/>
+      <img mat-card-md-image  [src]="book.imageSrc"/>
     </div>
   <div class = "bookDataContainer">
     <h1>{{book.title}}</h1>
@@ -13,8 +14,7 @@
     </div>
     <p [ngStyle]="{'color':'red'}">{{book.condition}}</p>
   </div>
-</div>
-
+  </div>
 </mat-card>
 
 
