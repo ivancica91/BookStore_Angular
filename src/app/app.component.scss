@@ -2,21 +2,26 @@
 
 #contentContainer{
   padding-top: 30px;
+  position: relative;
 
 }
 
 
 /* ----Footer Section--------*/
 #footer {
+  position: absolute;
+  bottom: 0;
   background-color: black;
   min-height: unset;
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .footer-icons i {
   font-size: 2rem;
+
 
   margin-bottom: 1vw;
   margin-left: 1vw; // for same space between them

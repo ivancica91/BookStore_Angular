@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { BookService } from 'src/app/book.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Book, PutBook } from 'src/app/Book';
+import { Book } from 'src/app/Book';
 import { Author } from 'src/app/Author';
 
 @Component({
@@ -39,7 +39,7 @@ export class EditBookComponent implements OnInit {
   this.bookForm = new FormGroup({
   // id: new FormControl(),
     title: new FormControl(),
-    authorName: new FormControl(),
+     authorName: new FormControl(),
     authorId: new FormControl(),
     price: new FormControl(),
     description: new FormControl(),

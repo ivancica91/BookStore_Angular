@@ -15,10 +15,10 @@
     </mat-form-field> -->
 
     <mat-form-field>
-      <input placeholder="Author" type="text" formControlName="authorName" (keyup)="onAuthorChange($event)" matInput autocomplete="off">
+      <input placeholder="Author" type="text" formControlName="authorName" (keyup)="onAuthorChange($event)" matInput autocomplete="off" />
      </mat-form-field>
      <ul class="search-result">
-      <li *ngFor= "let author of authors" (click)="onAuthorClick(author)">{{author.firstName}} {{author.lastName}}</li>
+      <li *ngFor= "let author of authors" (click)="onAuthorClick(author)">  {{author.firstName }} {{author.lastName }}  </li>
     </ul>
 
     <mat-form-field>

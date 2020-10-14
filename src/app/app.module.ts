@@ -45,7 +45,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
     MatIconModule,
     FlexLayoutModule,
     RouterModule.forRoot([{
-      path: 'login', loadChildren: () => import('./loginmodule/login.module').then(m => m.LoginModule)
+      path: 'login', loadChildren: () => import('./loginmodule/login.module').then(m => m.LoginModule) // since I removed login, I should remove this too
     },{
       path: '', redirectTo: 'home', pathMatch: 'full'}
       //{
